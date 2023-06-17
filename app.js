@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 const debug = require('debug')('app');
 const morgan = require('morgan');
+const port = 3000;
+
+const path = require('path');
 
 let chalk;
 import('chalk').then((chalkModule) => {
@@ -10,6 +12,7 @@ import('chalk').then((chalkModule) => {
 
 
 app.use(morgan('combined'));
+app.use(express.static(path.join(__dirname, "/public/")));
 
 app.get("/", (req,res) => {
     res.send("Hello Kuay huadoor");
