@@ -12,7 +12,7 @@ import('chalk').then((chalkModule) => {
 app.use(morgan('combined'));
 
 app.get("/", (req,res) => {
-    res.send("Hello Kuay");
+    res.send("Hello Kuay huadoor");
 });
 
 app.listen(port, ()=>{
